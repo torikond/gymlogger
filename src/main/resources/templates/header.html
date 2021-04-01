@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+.navbar {
+  overflow: hidden;
+  background-color: #231F20;
+  font-family: Arial;
+}
+
+.navbar a {
+  float: right;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  padding: 35px 40px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 25px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 35px 40px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #8F9166;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 145px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+        <div th:insert="header"></div>
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="dropdown">
+        <button class="dropbtn">More
+            <i class="down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/history">History</a>
+            <a href="/create">Create</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <a href="/workout">Workout</a>
+    <a href="/home">Home</a>
+</div>
+
+</body>
+</html>

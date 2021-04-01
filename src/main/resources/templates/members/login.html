@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+    .main-style{
+	max-width: 500px;
+	background: #FAFAFA;
+	margin: 50px auto;
+	padding: 100px;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+	border: 8px solid #8F9166;
+    }
+    .field-style{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 8px;
+	outline: none;
+	border: 2px solid #8F9166;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+}
+.field-name{
+    line-height: 40px;
+            font-size:18px;
+              font-weight: 600;
+}
+    .title{
+    font-weight: bold;
+	text-transform: uppercase;
+    text-align: center;
+    font-size:50px;
+    }
+    .rtitle{
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: left;
+        font-size:35px;
+        background: #8F9166;
+        color: #ffffff;
+        ont-weight: bold;
+        letter-spacing: 1px;
+        padding: 10px 15px 8px;
+        text-transform: uppercase;
+    }
+    .heading{
+        background: #8F9166;
+        color: #ffffff;
+        display: inline-block;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 15px;
+        letter-spacing: 1px;
+        margin: 35px 0 25px;
+        padding: 10px 15px 8px;
+        text-transform: uppercase;
+    }
+   .form-single{
+	width: 100%;
+}
+    .field-split{
+	width: 49%;
+}
+.field{
+	min-height: 80px;
+}
+.button{
+ 	background: #8F9166;
+ 	color: #ffffff;
+ 	display: inline-block;
+ 	font-size: 14px;
+ 	font-weight: bold;
+ 	line-height: 14px;
+ 	letter-spacing: 1px;
+ 	margin: 35px 0px 25px;
+ 	padding: 10px 10px 8px;
+ 	text-transform: uppercase;
+   	text-align:center;
+	width: 30%;
+	text-decoration: none;
+ }
+
+.align-left{
+ 	float:left;
+ }
+
+ .align-right{
+ 	float:right;
+ }
+ .required{
+	color:red;
+}
+
+    </style>
+</head>
+<body>
+<div class="loginpage">
+    <form class="main-style" action="/login" method="post">
+    <h1 className="title">Gym Logger</h1>
+        <p>amazingly simple workout tracking, planning & sharing
+        </p>
+        <div className="section">
+            <div class="heading">Log in here:</div>
+            <div class ="fields">
+                <div class = "field">
+                    <label class="field-name"><span>Email<span class="required">*</span></span></label>
+                    <input type="text" placeholder="Email" name="email" class="field-style form-single" id="email"/>
+                    <label class="field-name"><span>Password<span class="required">*</span></span></label>
+                    <input type="password" placeholder="Password" name="password" class="field-style form-single" id="password"/>
+                </div>
+            </div>
+        </div>
+        <p th:if="${loginError}" class="error required field-name align-center">Wrong email or password entered. Please try again.</p>
+        <p class="field-name align-center"><span>Don't have an account? Sign up <span><a href="/register/new" class="field-name align-center">here.</a></span></span></p>
+        <button type ="submit" class="button">Log in</button>
+    </form>
+
+</div>
+</body>
+</html>

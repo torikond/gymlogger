@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+    .main-style{
+	max-width: 500px;
+	background: #FAFAFA;
+	margin: 50px auto;
+	padding: 100px;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+	border: 8px solid #8F9166;
+    }
+    .field-style{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 8px;
+	outline: none;
+	border: 2px solid #8F9166;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+}
+.field-name{
+    line-height: 40px;
+            font-size:18px;
+              font-weight: 600;
+}
+    .title{
+    font-weight: bold;
+	text-transform: uppercase;
+    text-align: center;
+    font-size:50px;
+    }
+    .rtitle{
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: left;
+        font-size:35px;
+        background: #8F9166;
+        color: #ffffff;
+        ont-weight: bold;
+        letter-spacing: 1px;
+        padding: 10px 15px 8px;
+        text-transform: uppercase;
+    }
+    .heading{
+        background: #8F9166;
+        color: #ffffff;
+        display: inline-block;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 15px;
+        letter-spacing: 1px;
+        margin: 35px 0 25px;
+        padding: 10px 15px 8px;
+        text-transform: uppercase;
+    }
+   .form-single{
+	width: 100%;
+}
+    .field-split{
+	width: 49%;
+}
+.field{
+	min-height: 80px;
+}
+.button{
+ 	background: #8F9166;
+ 	color: #ffffff;
+ 	display: inline-block;
+ 	font-size: 14px;
+ 	font-weight: bold;
+ 	line-height: 14px;
+ 	letter-spacing: 1px;
+ 	margin: 35px 0px 25px;
+ 	padding: 10px 10px 8px;
+ 	text-transform: uppercase;
+   	text-align:center;
+	width: 30%;
+	text-decoration: none;
+ }
+
+.align-left{
+ 	float:left;
+ }
+
+ .align-right{
+ 	float:right;
+ }
+ span.required{
+	color:red;
+}
+
+    </style>
+</head>
+<body>
+<div class="registerpage">
+    <form class="main-style" action="/register/new" method="post">
+        <h1 className="title">Gym Logger</h1>
+        <p>amazingly simple workout tracking, planning & sharing
+        </p>
+        <div className="section">
+            <div class="heading">Sign up here:</div>
+            <div class ="fields">
+                <div class = "field">
+                    <label class="field-name"><span>First Name<span class="required">*</span><span class ="field-name field-split align-right">Last Name<span class="required">*</span></span></span></label>
+                    <input type="text" placeholder="First name" name="firstname" class="field-style field-split align-left" id="firstname"/>
+                    <input type="text" placeholder="Last Name" name="lastname" class="field-style field-split align-right" id="lastname"/>
+                </div>
+                <div class = "field">
+                    <label class="field-name"><span>Email<span class="required">*</span></span></label>
+                    <input type="text" placeholder="Email" name="email" class="field-style form-single" id="email"/>
+                    <label class="field-name"><span>Password<span class="required">*</span></span></label>
+                    <input type="password" placeholder="Password" name="password" class="field-style form-single" id="password"/>
+                </div>
+            </div>
+        </div>
+        <p class="field-name align-center"><span>Already have an account? Log in <span><a href="/login" class="field-name align-center">here.</a></span></span></p>
+        <button type ="submit" class="button">Sign up</button>
+    </form>
+</div>
+</body>
+</html>
