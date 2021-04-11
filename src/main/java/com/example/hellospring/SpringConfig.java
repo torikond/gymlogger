@@ -1,8 +1,11 @@
 package com.example.hellospring;
 
 import com.example.hellospring.repository.JpaMemberRepository;
+import com.example.hellospring.repository.JpaWorkoutRepository;
 import com.example.hellospring.repository.MemberRepository;
+import com.example.hellospring.repository.WorkoutRepository;
 import com.example.hellospring.service.MemberService;
+import com.example.hellospring.service.WorkoutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,6 +38,14 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository(){
         return new JpaMemberRepository(em);
+    }
+
+    @Bean
+    public WorkoutService workoutService() {return new WorkoutService(workoutRepository());}
+
+    @Bean
+    public WorkoutRepository workoutRepository(){
+        return new JpaWorkoutRepository(em);
     }
 
     // Solid design principles

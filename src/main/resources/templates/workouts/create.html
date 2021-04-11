@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main-style{
+        max-width: 800px;
+        background: #FAFAFA;
+        margin: 50px auto;
+        box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+        border-radius: 10px;
+        border: 8px solid #8F9166;
+        }
+        .extra-style{
+        padding: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class = "create main-style">
+    <div th:insert="header"></div>
+    <form class="extra-style" action="/workouts/create" method="post">
+        <div class = "field">
+            <label className="field-name">Category</label>
+            <select name="category" className="field-style field-split align-right" id="category">
+                <option value="blank"></option>
+                <option value="core">Core</option>
+                <option value="arms">Arms</option>
+                <option value="back">Back</option>
+                <option value="chest">Chest</option>
+                <option value="legs">Legs</option>
+                <option value="shoulders">Shoulders</option>
+                <option value="cardio">Cardio</option>
+                <option value="other">Other</option>
+                //add onchange
+            </select>
+        </div>
+        <div class = "field">
+            <label className="field-name">Exercise Name</label>
+            <input type="text" placeholder="Add name" name="exercise" className="field-style form-single" id = "exercise"/>
+        </div>
+        <button type ="submit" class="button">Add Exercise</button>
+    </form>
+</div>
+</body>
+</html>
